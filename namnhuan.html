@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xac dinh nam nhuan</title>
+</head>
+<body>
+<p><b>Leap-year check</b></p>
+<label><input id="namnhuan" type="number" size="20" placeholder="Nhap vao so nam"></label>
+<button type="button" id="oncheck">Check</button>
+<p id="output"></p>
+<script>
+    let selectedElement = document.getElementById("oncheck");
+    selectedElement.addEventListener("click", yearcheck);
+
+    function yearcheck() {
+        let x = +document.getElementById("namnhuan").value;
+        if (x%4== 0 && x%100 != 0) {
+            document.getElementById("output").innerHTML = "leap-year";
+        } else if (x%100 == 0 && x%400!= 0) {
+            document.getElementById("output").innerHTML = "not leap-year";
+        } else if (x%100 == 0 && x%400== 0) {
+            document.getElementById("output").innerHTML = "leap-year";
+        } else {
+            document.getElementById("output").innerHTML = "not leap-year";
+        }
+    }
+</script>
+</body>
+</html>
